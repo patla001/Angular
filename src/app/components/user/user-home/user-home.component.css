@@ -1,0 +1,111 @@
+/*=============================================================================
+                                CLASSES
+=============================================================================*/
+.inactive-link a, .inactive-link mat-icon {
+    color: var(--on-primary-inactive);
+}
+.inactive-link a {
+    border-bottom: 2px solid transparent;
+}
+.active-link a, .active-link mat-icon {
+    color: var(--on-primary);
+    /* background-color: var(--primary-light); */
+}
+.active-link a {
+    border-bottom: 2px solid var(--on-primary);
+}
+#logout a, #logout mat-icon {
+    color: var(--on-primary-inactive);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+
+/*=============================================================================
+                                NAVIGATION BAR
+=============================================================================*/
+nav {
+    background-color: var(--primary-dark);
+    width: 144px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+    /* border: 1px dashed green; */
+}
+    #subnav > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 4px 0px;
+        margin-bottom: 12px;
+        /* border: 1px dashed purple; */
+    }
+    #logout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 4px 0px;
+        /* border: 1px dashed red; */
+    }
+    #subnav > div:hover,
+    #logout:hover {
+        cursor: pointer;
+        background-color: var(--primary-hover);
+        -webkit-transition-duration: 0.2s;
+        -moz-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+    }
+    #subnav > div:active,
+    #logout:active {
+        background-color: var(--primary-active);
+        -webkit-transition-duration: 0.2s;
+        -moz-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+    }
+        #subnav > div > div,
+        #logout > div {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px dashed red; */
+        }
+            #subnav > div > div > mat-icon,
+            #logout > div > mat-icon {
+                font-size: 24px;
+                width: 24px;
+                height: 24px;
+            }
+        #subnav > div > a,
+        #logout > a {
+            flex: 2;
+            display: block;
+            text-decoration: none;
+            padding: 4px 0px;
+            -webkit-transition-duration: 0.2s;
+            -moz-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+            /* border: 1px dashed red; */
+        }
+/* Highlight sign out button on active state */
+#logout:active a, #logout:active mat-icon {
+    color: var(--on-primary);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+
+/*=============================================================================
+                            ROUTER OUTLET CONTAINER
+=============================================================================*/
+#user_home_container {
+    margin-left: 144px;
+    height: 100%;
+    /* border: 1px dashed blue; */
+}

@@ -1,0 +1,16 @@
+<div id="confirmation_title_container">
+    <p><b>{{confirmationInitData[0]}}</b></p>
+</div>
+
+<div id="confirmation_message_container">
+    <p>{{confirmationInitData[1]}}</p>
+</div>
+
+<div id="confirmation_actions_container">
+    <div id="cancel_button_container">
+        <button type="button" name="button" (click)="emitOnConfirmationOutputResult(false)">Cancel</button>
+    </div>
+    <div id="confirm_button_container">
+        <button type="button" name="button" (click)="emitOnConfirmationOutputResult(true)">Confirm</button>
+    </div>
+</div>

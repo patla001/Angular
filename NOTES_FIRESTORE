@@ -1,0 +1,9 @@
+import {AngularFirestore, AngularFirestoreDocument} from '@Angular/fire/Firestore'
+import {Observable, Subscription} from 'rxjs'
+Step #1 Inject to the constructer Angular Firestore
+Step #2 ngOnInit create firestore reference takes the path to document or collection
+this.afs.doc<Course>
+Step #3 Call snapshotchanges or values changes on Angular Firestore reference which returns Observable that you need takes
+Step #4 Call Subscribe on Observable
+Step #5 Pass observaber but mainly the next function (next: ) Value you want to collect
+Step #6 Get the Subscription that was return from Subscribe and call unsubscribe on Subscription not Observable in the ngOnDestroy()

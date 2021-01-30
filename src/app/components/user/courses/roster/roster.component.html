@@ -1,0 +1,71 @@
+<div class="toolbar">
+    <div class="title">
+        <p>Roster</p>
+    </div>
+    <div class="toolbar_item_container">
+        <div class="toolbar_item">
+            <p>I</p>
+        </div>
+        <div class="toolbar_item">
+            <p>P</p>
+        </div>
+    </div>
+</div>
+
+
+<div id="content">
+
+    <div *ngIf="(gettingMembers == false) else indeterminate_progress_bar">        
+        <div *ngIf="(members.length > 0) else empty_roster" class="roster_container">
+
+            <div class="roster_content">
+                <div class="roster_heading">
+                    <div class="">
+                        <p>Last Name</p>
+                    </div>
+                    <div class="">
+                        <p>First Name</p>
+                    </div>
+                    <div class="">
+                        <p>ID</p>
+                    </div>
+                    <div class="">
+                        <p>Email</p>
+                    </div>
+                </div>
+
+                <div *ngFor="let member of members"  class="roster_student">
+                    <div class="">
+                        <p>{{member.lastName}}</p>
+                    </div>
+                    <div class="">
+                        <p>{{member.firstName}}</p>
+                    </div>
+                    <div class="">
+                        <p>{{member.id}}</p>
+                    </div>
+                    <div class="">
+                        <p>{{member.email}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- EMPTY DIRECTORY -->
+    <ng-template #empty_roster>
+        <div class="empty_roster">
+            <p>There are no members on the roster.</p>
+        </div>
+    </ng-template>
+
+    <!-- TEMPLATE FOR INDETERMINATE PROGRESS BAR -->
+    <ng-template #indeterminate_progress_bar>
+        <div id="progress_bar_container">
+            <app-indeterminate-progress-bar
+                [progressTitle]="indeterminateProgressBarTitle">
+            </app-indeterminate-progress-bar>
+        </div>
+    </ng-template>
+</div>

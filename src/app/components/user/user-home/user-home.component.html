@@ -1,0 +1,35 @@
+<!-- Navigation Bar -->
+<nav>
+    <div id="subnav">
+        <div [routerLink]="['account']" routerLinkActive="active-link" class="inactive-link">
+            <div>
+                <mat-icon aria-hidden="false" aria-label="Account">person</mat-icon>
+            </div>
+            <a>Account</a>
+        </div>
+        <div [routerLink]="['courses']" routerLinkActive="active-link" class="inactive-link">
+            <div>
+                <mat-icon aria-hidden="false" aria-label="Account">collections_bookmark</mat-icon>
+            </div>
+            <a>Courses</a>
+        </div>
+        <div [routerLink]="['calendar']" routerLinkActive="active-link" class="inactive-link">
+            <div>
+                <mat-icon aria-hidden="false" aria-label="Account">calendar_today</mat-icon>
+            </div>
+            <a>Calendar</a>
+        </div>
+    </div>
+
+    <div id="logout">
+        <div>
+            <mat-icon aria-hidden="false" aria-label="Account">exit_to_app</mat-icon>
+        </div>
+        <a>Sign out</a>
+    </div>
+</nav>
+
+<!-- Router Outlet Container -->
+<div id="user_home_container">
+    <router-outlet></router-outlet>
+</div>

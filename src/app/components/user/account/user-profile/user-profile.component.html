@@ -1,0 +1,68 @@
+<div>
+    <div id="profile_header">
+        <div>
+            <div id="edit_profile_container">
+                <button (click)="navigateToEditProfile(currentUser)">Edit Profile</button>
+            </div>
+        </div>
+        <svg class="image_cover" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="240" height="240" enable-background="new 0 0 292.359 292.359" viewBox="0 0 24 24">
+            <rect width="24" height="24" style="fill:#888888; stroke:blue"/>
+            <path fill="black" d="M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+        </svg>
+
+        <h3>{{currentUser.firstName}} {{currentUser.middleName}} {{currentUser.lastName}}</h3>
+
+
+        <div id="tagline_container">
+            <div>
+                <p>{{currentUser.title}}</p>
+            </div>
+            <div>
+                <p>{{currentUser.tagline}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="profile_information_container">
+        <div class="profile_information_row">
+            <div>
+                <p>Email: {{currentUser.email}}</p>
+            </div>
+            <div>
+                <p>Major: {{currentUser.major}}</p>
+            </div>
+        </div>
+
+        <div class="profile_information_row">
+            <div>
+                <p>Phone:{{currentUser.phoneNumber}}</p>
+            </div>
+            <div>
+                <p>LinkedIn:{{currentUser.linkedIn || ""}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="profile_description_container">
+        <h4>Description</h4>
+        <br>
+        <p>{{currentUser.description}}</p>
+    </div>
+
+    <div id="links_container">
+        <h4>Links</h4>
+        <br>
+        <div *ngIf="(userLinks.length > 0) else empty_links" id="links_column">
+            <div *ngFor="let link of userLinks" class="link">
+                <p>{{link}}</p>
+            </div>
+        </div>
+
+        <ng-template #empty_links>
+            <div id="empty_links_container">
+                <p>There are no links</p>
+            </div>
+        </ng-template>
+    </div>
+
+</div>

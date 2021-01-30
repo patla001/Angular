@@ -1,0 +1,120 @@
+
+<div>
+    <div id="profile_header">
+        <div>
+            <div id="edit_profile_container">
+                <button (click)="goBack()" class="btn btn-success">Cancel</button>
+            </div>
+        </div>
+        <svg class="image_cover" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="240" height="240" enable-background="new 0 0 292.359 292.359" viewBox="0 0 24 24">
+            <rect width="24" height="24" style="fill:#888888; stroke:blue"/>
+            <path fill="black" d="M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+        </svg>
+
+        <h3> {{currentUser.firstName || ""}} {{currentUser.middleName || ""}} {{currentUser.lastName || ""}}</h3>
+    </div>
+
+    <div id="edit_profile_information_container">
+        <div class="edit_profile_information_row">
+            <div>
+                <p>Email: {{currentUser.email || ""}}</p>
+            </div>
+            <div>
+                <p>Major: {{currentUser.major || ""}}</p>
+            </div>
+        </div>
+
+        <div class="edit_profile_information_row">
+            <div>
+                <p>Phone:{{currentUser.phoneNumber || ""}}</p>
+            </div>
+            <div>
+                <p>LinkedIn:{{currentUser.linkedIn || ""}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit_profile_tagline_container">
+        <h4>Tagline:</h4>
+        <textarea name="description" rows="10">{{this.currentUser.tagline || ""}}</textarea>
+    </div>
+
+    <div id="edit_profile_description_container">
+        <h4>Description:</h4>
+        <br>
+        <textarea name="description" rows="10">{{this.currentUser.description || ""}}
+        </textarea>
+    </div>
+
+    <div id="edit_links_container">
+        <h4>Links</h4>
+
+        <mat-nav-list>
+            <mat-list-item *ngFor="let link of userLinks">
+                <a matLine href="//{{link}}">{{link}}</a>
+                <div class="options">
+                    <button mat-icon-button [matMenuTriggerFor]="linksMenu">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #linksMenu="matMenu">
+                        <button
+                            mat-menu-item
+                            (click)="onEdit(i)">
+                            Edit
+                        </button>
+                        <button
+                            mat-menu-item
+                            (click)="onDelete(i)">
+                            Delete
+                        </button>
+                    </mat-menu>
+                </div>
+            </mat-list-item>
+        </mat-nav-list>
+
+        <ng-template #empty_links>
+            <div id="empty_links_container">
+                <p>There are no links</p>
+            </div>
+        </ng-template>
+    </div>
+
+
+    <div id="edit_profile_container">
+        <button
+            (click)="saveProfileClicked()"
+            class="btn btn-success">
+            Save
+        </button>
+    </div>
+</div>
+
+
+
+<!--
+<div class="col-md-6">
+ <h2 class="text-center">Edit User</h2>
+
+<form #form="ngForm" (submit)="onEdit(form)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="currentUser.id">
+   <div class="form-group">
+     <label for="firstName">First Name:</label>
+     <input name="firstName" #firstName="ngModel" [(ngModel)]="currentUser.firstName"class="form-control" placeholder="First Name" >
+   </div>
+
+   <div class="form-group">
+     <label for="lastName">Last Name:</label>
+     <input name="lastName" #lastName="ngModel" [(ngModel)]="currentUser.lastName" class="form-control"
+       placeholder="Last Name">
+   </div>
+
+   <div class="form-group">
+     <label for="phone">Phone Number:</label>
+     <input name="phone" #lastName="ngModel" [(ngModel)]="currentUser.phoneNumber" class="form-control"
+       placeholder="Phone Number">
+   </div>
+
+   <button (click)="onSubmit(form)" class="btn btn-success">Update</button>
+ </form>
+</div>
+-->

@@ -1,0 +1,213 @@
+<div class="toolbar">
+    <div class="toolbar_title">
+        <p>Assignments</p>
+    </div>
+    <div class="toolbar_item_container">
+        <div
+            (click)="returnToAssignments()"
+            class="toolbar_item">
+            <p>Cancel</p>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+
+    <form [formGroup]="assignmentFormGroup">
+    <!-- <form formGroupName="assignmentFormGroup"> -->
+
+        <div id="content_material_container" >
+
+            <div id="name_points">
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Assignment Name</mat-label>
+                        <input
+                            formControlName="nameControl"
+                            matInput
+                            placeholder="Enter name"
+                            required
+                            maxlength="100">
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <mat-hint>Max 100 characters</mat-hint>
+                        <mat-error
+                            *ngIf="assignmentFormGroup.get('nameControl').hasError('required')">
+                            Required
+                        </mat-error>
+                        <mat-error
+                            *ngIf="assignmentFormGroup.get('nameControl').hasError('maxlength')">
+                            Must not be more than 100 characters
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Points Possible</mat-label>
+                        <input
+                            formControlName="pointsControl"
+                            matInput
+                            placeholder="Enter number"
+                            required
+                            maxlength="10">
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <mat-hint>Max 10 digits. Whole number.</mat-hint>
+                        <mat-error
+                            *ngIf="assignmentFormGroup.get('pointsControl').hasError('required')">
+                            Required
+                        </mat-error>
+                        <mat-error
+                            *ngIf="assignmentFormGroup.get('pointsControl').hasError('maxlength')">
+                            Must not be more than 10 digits
+                        </mat-error>
+                        <mat-error
+                            *ngIf="assignmentFormGroup.get('pointsControl').hasError('pattern')">
+                            Must be a whole number
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div id="category_submission_date">
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Category</mat-label>
+                        <mat-select
+                            formControlName="categoryControl"
+                            required>
+                            <mat-option [value]="">--</mat-option>
+                            <mat-option
+                                *ngFor="let category of addAssignmentCategories"
+                                [value]="category">
+                                {{category}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="assignmentFormGroup.get('categoryControl').hasError('required')">
+                            Please choose a category
+                        </mat-error>
+                        <!-- <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Submission Type</mat-label>
+                        <mat-select
+                            formControlName="submissionControl"
+                            required>
+                            <mat-option [value]="">--</mat-option>
+                            <mat-option
+                                *ngFor="let type of addAssignmentTypes"
+                                [value]="type">
+                                {{type}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="assignmentFormGroup.get('submissionControl').hasError('required')">
+                            Please choose a type
+                        </mat-error>
+                        <!-- <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <div id="datepicker_container">
+                        <mat-form-field>
+                            <input
+                                id="date_input"
+                                matInput
+                                type="datetime-local"
+                                [matDatepicker]="myDatepicker"
+                                placeholder="Choose a date"
+                                formControlName="dueDateControl">
+                            <mat-error
+                                *ngIf="assignmentFormGroup.get('dueDateControl').invalid">
+                                {{getDateErrorMessage()}}
+                            </mat-error>
+                            <mat-datepicker-toggle
+                                matSuffix
+                                [for]="myDatepicker">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #myDatepicker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Timepicker -->
+                    <div id="timepicker_container">
+                        <div>
+                            <input
+                                formControlName="timeControl"
+                                [ngxTimepicker]="myTimepicker"
+                                placeholder="Choose a time">
+                            <ngx-material-timepicker-toggle
+                                [for]="myTimepicker">
+                                <svg style="width:14px;height:14px" viewBox="0 0 24 24" ngxMaterialTimepickerToggleIcon>
+                                    <path fill="#666" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                </svg>
+                            </ngx-material-timepicker-toggle>
+                            <ngx-material-timepicker
+                                #myTimepicker
+                                [defaultTime]="'11:59 pm'">
+                            </ngx-material-timepicker>
+                        </div>
+                        <div
+                            id="timepicker_error"
+                            [ngClass]="
+                                (assignmentFormGroup.get('timeControl').invalid) && (assignmentFormGroup.get('timeControl').dirty || assignmentFormGroup.get('timeControl').touched) ? 'showError' : 'hideError'
+                            ">
+                            <p>{{getTimeErrorMessage()}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="view_definitions">
+                <button
+                    type="button"
+                    (click)="toggleIsViewingDefinitions()">
+                    {{viewDefinitionsText()}} definitions
+                </button>
+                <div
+                    *ngIf="isViewingDefinitions">
+                    <p><b>Assignment Name</b>: the title for the assignment</p>
+                    <p><b>Points</b>: the numerical value to give for the graded assignment</p>
+                    <p><b>Category</b>: the category to group this assignment under. New categories can be created but there must be at least one assignment under each category.</p>
+                    <p><b>Submission type</b>: how you want students to complete the assignment</p>
+                    <ul>
+                        <li><u>File Upload</u>: students must upload a file with a specified, acceptable type(s)</li>
+                        <li><u>Text Response</u>: students submit their response in a simple textbox.</li>
+                        <li><u>Online Quiz/Exam</u>: faculty can create an online quiz with questions and answers for students to take.</li>
+                        <li><u>Turnitin</u>:</li>
+                        <li><u>External link</u>: students complete the assignment through an external link rather than Coordinate.</li>
+                        <li><u>None</u>: students do not need to submit anything. Faculty are still able to designate if the assignment is graded.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="graded">
+                <mat-checkbox
+                    formControlName="gradeControl">
+                    Do <b>not</b> grade this assignment
+                </mat-checkbox>
+            </div>
+
+            <h3>Description</h3>
+            <div id="editor">
+                <quill-editor></quill-editor>
+            </div>
+
+        </div>
+
+        <!-- Confirm -->
+        <div id="confirm">
+            <div class="button_material">
+                <button
+                    type="submit"
+                    (click)="onConfirmClicked()">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

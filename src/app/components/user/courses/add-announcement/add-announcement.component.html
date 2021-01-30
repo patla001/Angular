@@ -1,0 +1,91 @@
+<!-- TOOLBAR -->
+<mat-toolbar>
+    <span>Add Announcement</span>
+    <span class="spacer"></span>
+    <div (click)="returnToAnnouncements()">
+        <mat-icon
+            aria-hidden="false"
+            aria-label="Add">
+                arrow_back
+        </mat-icon>
+        <span>Return</span>
+    </div>
+</mat-toolbar>
+
+<div id="content">
+    <form
+        *ngIf="( (gettingAnnouncement == false) &&
+            (submittingAnnouncement == false) &&
+            (updatingAnnouncement == false) ) else indeterminate_progress_bar"
+        [formGroup]="announcementFormGroup">
+
+        <div id="content_material_container">
+            <div id="title">
+                <mat-form-field appearance="outline">
+                    <mat-label>Title</mat-label>
+                    <input
+                        formControlName="titleControl"
+                        matInput
+                        placeholder="Enter title"
+                        required
+                        maxlength="100">
+                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                    <mat-hint>Max 100 characters</mat-hint>
+                    <mat-error
+                        *ngIf="announcementFormGroup.get('titleControl').hasError('required')">
+                        Required
+                    </mat-error>
+                    <mat-error
+                        *ngIf="announcementFormGroup.get('titleControl').hasError('maxlength')">
+                        Must not be more than 100 characters
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div id="editor">
+                <quill-editor formControlName="quillControl"></quill-editor>
+            </div>
+
+            <!-- <div class="ql-container ql-snow" style="border-width: 0;">
+                <div class="ql-editor" [innerHTML]="announcementDescription">
+                </div>
+            </div> -->
+        </div>
+
+        <div id="draft_submit">
+            <!-- Save as draft -->
+            <div id="save_as_draft">
+                <div class="button_material button_save">
+                    <button
+                        type="button"
+                        (click)="onSaveAsDraft()">
+                        Save as Draft
+                    </button>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div id="submit">
+                <div class="button_material button_submit_update">
+                    <button
+                        type="submit"
+                        (click)="onSubmit()">
+                        {{getSubmitButtonTitle()}}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <!-- TEMPLATE FOR INDETERMINATE PROGRESS BAR -->
+    <ng-template #indeterminate_progress_bar>
+        <div id="progress_bar_container">
+            <p>{{getProgressBarTitle()}}</p>
+            <mat-progress-bar
+                mode="indeterminate"
+                color="accent">
+            </mat-progress-bar>
+        </div>
+    </ng-template>
+</div>

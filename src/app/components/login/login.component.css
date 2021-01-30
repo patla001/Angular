@@ -1,0 +1,239 @@
+/*=============================================================================
+                                GENERAL
+=============================================================================*/
+
+
+/*=============================================================================
+                                HEADER
+=============================================================================*/
+#login_content_wrapper {
+    background-color: var(--primary);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* border: 1px dashed green; */
+}
+    #login_coordinate_container {
+        flex-basis: 40%;
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        /* border: 1px dashed red; */
+    }
+        #login_coordinate_logo {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 24px 0px;
+            margin-top: 25%;
+            /* border: 1px dashed red; */
+        }
+            #login_coordinate_logo mat-icon {
+                color: var(--on-primary);
+                font-size: 48px;
+                width: 48px;
+                height: 48px;
+                margin-right: 12px;
+            }
+            #login_coordinate_logo p {
+                color: var(--on-primary);
+                font-weight: bold;
+                font-size: 2.4rem;
+            }
+        #login_coordinate_text {
+            padding: 12px 0px;
+            margin-left: 24px;
+        }
+            #login_coordinate_text p {
+                color: var(--on-primary);
+                font-weight: bold;
+                font-size: 1.2rem;
+                /* text-align: right; */
+            }
+    #login_container {
+        background-color: var(--surface-dark);
+        /* opacity: 0.7; */
+        flex-basis: 30%;
+        align-self: center;
+        min-width: 144px;
+        min-height: 144px;
+        max-height: 320px;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 24px;
+        /* border: 1px dashed blue; */
+    }
+        .credential_container input {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+        #forgot_pass_container {
+            margin-bottom: 24px;
+        }
+            #forgot_pass_container p {
+                color: var(--on-surface);
+                cursor: pointer;
+                padding-left: 12px;
+                -webkit-transition-duration: 0.3s;
+                -moz-transition-duration: 0.3s;
+                transition-duration: 0.3s;
+            }
+            #forgot_pass_container p:hover {
+                color: var(--on-surface-hover);
+                -webkit-transition-duration: 0.3s;
+                -moz-transition-duration: 0.3s;
+                transition-duration: 0.3s;
+            }
+
+        #login_container button {
+            color: var(--on-action);
+            background-color: var(--action);
+            align-self: center;
+            display: block;
+            min-width: 200px;
+            width: 25%;
+            border: 0;
+            padding: 12px 32px;
+            -webkit-transition-duration: 0.5s;
+            -moz-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+        }
+        #login_container button:hover {
+            color: var(--on-action-hover);
+            background-color: var(--action-hover);
+            cursor: pointer;
+            -webkit-transition-duration: 0.5s;
+            -moz-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+        }
+        #login_container button:active {
+            color: var(--on-action-hover);
+            background-color: var(--action-active);
+            -webkit-transition-duration: 0.2s;
+            -moz-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+        }
+
+/*=============================================================================
+                                GRID
+=============================================================================*/
+#introduction_wrapper {
+    background-color: var(--surface);
+    padding-top: 48px;
+    padding-bottom: 48px;
+    /* border: 1px dashed red; */
+}
+    #introduction_wrapper > p:nth-of-type(1) {
+        color: var(--on-surface);
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 32px;
+        padding: 24px;
+        margin-bottom: 48px;
+        /* border: 1px dashed; */
+    }
+    .two_column_grid {
+        display: grid;
+        width: 80%;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 48px;
+        justify-content: space-evenly;
+        margin-left: auto;
+        margin-right: auto;
+        /* border: 1px dashed blue; */
+    }
+        .grid_container {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            margin-left: auto;
+            margin-right: auto;
+            /* border: 1px dashed green; */
+        }
+            .grid_container > div:nth-of-type(1) {
+                flex-basis: 40%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                /* border: 1px dashed orange; */
+            }
+                .grid_container > div:nth-of-type(1) > mat-icon {
+                    font-size: 48px;
+                    width: 48px;
+                    height: 48px;
+                    /* vertical-align: middle; */
+                    /* border: 1px dashed; */
+                }
+                /* .grid_container > div:nth-of-type(1) > p {
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    color: #04192e;
+                } */
+            .grid_container > div:nth-of-type(2) {
+                flex-basis: 50%;
+                /* border: 1px dashed purple; */
+            }
+                .grid_container > div:nth-of-type(2) > p:nth-of-type(1) {
+                    color: var(--primary-dark);
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    margin-bottom: 8px;
+                }
+                .grid_container > div:nth-of-type(2) > p:nth-of-type(2)  {
+                    color: var(--on-surface);
+                    font-weight: bold;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                }
+                .grid_container > div:nth-of-type(2) > p:nth-of-type(3) {
+                    color: var(--on-surface);
+                    line-height: 20px;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                }
+
+/*=============================================================================
+                                FOOTER
+=============================================================================*/
+#footer {
+    background-color: var(--primary-light);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 24px 96px;
+}
+    #footer p {
+        color: var(--on-primary);
+    }
+    #footer ul {
+        text-decoration: none;
+        margin-left: 24px;
+    }
+        #footer ul li {
+            display: inline;
+        }
+        #footer ul li a {
+            color: var(--on-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 8px;
+            margin-right: 8px;
+            -webkit-transition-duration: 0.3s;
+            -moz-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }
+        #footer ul li a:hover {
+            color: var(--accent);
+            -webkit-transition-duration: 0.3s;
+            -moz-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }

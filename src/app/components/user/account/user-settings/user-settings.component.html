@@ -1,0 +1,61 @@
+
+
+
+    <div id="setting_information_container ">
+        <div class="flex2">
+        <div>
+            <h4>Full Name: </h4>
+        </div>
+
+
+        <div>
+            <p>{{currentUser.firstName || ""}} {{currentUser.middleName || ""}} {{currentUser.lastName || ""}}</p>
+        </div>
+
+
+        </div>
+    </div>
+    <div id="setting_information_container ">
+        <div class="flex2">
+        <div>
+            <h4>Language:</h4>
+        </div>
+
+
+        <div>
+            <p> English </p>
+        </div>
+
+
+        </div>
+    </div>
+
+    <div id="setting_information_container ">
+        <div class="flex2">
+        <div>
+            <h4>Time Zone:</h4>
+        </div>
+
+
+        <div>
+            <p> {{today | date: 'medium'}} </p>
+        </div>
+
+
+        </div>
+    </div>
+
+    <!-- <div>
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle value="bold">Bold</mat-button-toggle>
+          <mat-button-toggle value="italic">Italic</mat-button-toggle>
+          <mat-button-toggle value="underline">Underline</mat-button-toggle>
+        </mat-button-toggle-group>
+  </div> -->
+
+    <div id="setting_information_container ">
+        <div class="flex2">
+        <div>
+            <mat-slide-toggle  (change)="setToggleSlide($event)">{{message}}</mat-slide-toggle>
+        </div>
+    </div>

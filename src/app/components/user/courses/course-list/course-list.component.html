@@ -1,0 +1,42 @@
+<!-- Navigation Bar -->
+<nav>
+    <div id="course_name">
+        <p>CSE 100</p>
+    </div>
+    <div>
+        <a [routerLink]="['home']" routerLinkActive="active-link" class="inactive-link">Home</a>
+    </div>
+    <div>
+        <a [routerLink]="['announcements']" routerLinkActive="active-link" class="inactive-link">Announcements</a>
+    </div>
+    <div>
+        <a [routerLink]="['assignments']" routerLinkActive="active-link" class="inactive-link">Assignments</a>
+    </div>
+    <div>
+        <a [routerLink]="['content']" routerLinkActive="active-link" class="inactive-link">Content</a>
+    </div>
+    <div>
+        <a [routerLink]="['discussion']" routerLinkActive="active-link" class="inactive-link">Discussion</a>
+    </div>
+    <div>
+        <a [routerLink]="['grades']" routerLinkActive="active-link" class="inactive-link">Grades</a>
+    </div>
+    <div>
+        <a [routerLink]="['roster']" routerLinkActive="active-link" class="inactive-link">Roster</a>
+    </div>
+    <div>
+        <a [routerLink]="['syllabus']" routerLinkActive="active-link" class="inactive-link">Syllabus</a>
+    </div>
+    <div>
+        <a [routerLink]="['groups']" routerLinkActive="active-link" class="inactive-link">Groups</a>
+    </div>
+    <p>Tools</p>
+    <div>
+        <a [routerLink]="['attendance']" routerLinkActive="active-link" class="inactive-link">Attendance</a>
+    </div>
+</nav>
+
+<!-- Router Outlet Container -->
+<div id="course_list_container">
+    <router-outlet></router-outlet>
+</div>

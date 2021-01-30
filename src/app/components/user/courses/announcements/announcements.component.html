@@ -1,0 +1,95 @@
+<!-- TOOLBAR -->
+<mat-toolbar>
+    <span>Announcements</span>
+    <span class="spacer"></span>
+    <div (click)=navigateToAddAnnouncement()>
+        <mat-icon
+            aria-hidden="false"
+            aria-label="Add">
+                add
+        </mat-icon>
+        <span>Add</span>
+    </div>
+</mat-toolbar>
+
+<div id="content">
+
+    <div *ngIf="( (gettingAnnouncements == false) && (deletingAnnouncement == false) ) else indeterminate_progress_bar">
+        <div *ngIf="(announcements.length > 0) else empty_announcements" >
+            <div *ngFor="let announcement of announcements; let i = index" class="announcement_container">
+                <div class="details_container">
+                    <div class="header">
+                        <div class="title_author">
+                            <div class="title">
+                                <p>{{announcement.title}}</p>
+                            </div>
+                            <div class="author">
+                                <p>Posted by: {{announcement.author}}</p>
+                            </div>
+                        </div>
+                        <div class="date_options">
+                            <div class="date">
+                                <p>{{announcement.timestamp.toDate() | date: 'medium'}}</p>
+                            </div>
+                            <div class="options">
+                                <button mat-icon-button [matMenuTriggerFor]="announcementMenu">
+                                    <mat-icon>more_vert</mat-icon>
+                                </button>
+                                <mat-menu #announcementMenu="matMenu">
+                                    <button
+                                        mat-menu-item
+                                        (click)="onEdit(i)">
+                                        Edit
+                                    </button>
+                                    <button
+                                        mat-menu-item
+                                        (click)="onDelete(i)">
+                                        Delete
+                                    </button>
+                                </mat-menu>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div
+                        class="description"
+                        [innerHTML]="announcement.description">
+                    </div> -->
+
+                    <div
+                        class="ql-container ql-snow">
+                        <div
+                            class="ql-editor"
+                            [innerHTML]="announcement.description">
+                        </div>
+                    </div>
+
+                    <!-- <div
+                        *ngIf=""
+                        class="read_more">
+                        <span>Read more</span>
+                        <mat-icon></mat-icon>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EMPTY ANNOUNCEMENTS -->
+    <ng-template #empty_announcements>
+        <div id="empty_announcements_container">
+            <p>Add a new announcement by clicking "Add" in the toolbar</p>
+        </div>
+    </ng-template>
+
+    <!-- TEMPLATE FOR INDETERMINATE PROGRESS BAR -->
+    <ng-template #indeterminate_progress_bar>
+        <div id="progress_bar_container">
+            <p>{{getProgressBarTitle()}}</p>
+            <mat-progress-bar
+                mode="indeterminate"
+                color="accent">
+            </mat-progress-bar>
+        </div>
+    </ng-template>
+</div>

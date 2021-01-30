@@ -1,0 +1,59 @@
+<div class="content-popup-tab">
+    <p (click)="setCurrentTab(contentTabBarEnum.FILE)">File</p>
+    <p (click)="setCurrentTab(contentTabBarEnum.LINK)">Link</p>
+    <p (click)="setCurrentTab(contentTabBarEnum.TEXT)">Text</p>
+    <p (click)="setCurrentTab(contentTabBarEnum.HTML)">Html</p>
+</div>
+
+<div [ngSwitch]="currentTab" class="content-popup-content">
+    <div *ngSwitchCase="contentTabBarEnum.FILE" class="choose-file-content">
+        <!-- <p><i>The file to upload must be PDF.</i></p> -->
+        <div>
+            <input (change)="onFileSelected()" type="file" name="" value="" id="input_file">
+        </div>
+        <!-- <div class="choose-file-content-preview">
+            <pdf-viewer [src]="pdfSrc" [render-text]="true" [original-size]="false" [autoresize]="true"></pdf-viewer>
+        </div> -->
+    </div>
+
+    <div *ngSwitchCase="contentTabBarEnum.LINK" class="enter-link-content">
+        <div>
+            <div>
+                <label for="link_title">Title: </label>
+            </div>
+            <input type="text" name="link_title" value="" placeholder="Enter text" id="link_input_title">
+        </div>
+        <div>
+            <div>
+                <label for="link_input">url: </label>
+            </div>
+            <input type="text" name="link_input" value="" placeholder="Enter url" id="link_input_url">
+        </div>
+        <!-- <div>
+            <input type="text" name="link_input" value="">
+        </div> -->
+    </div>
+
+    <div *ngSwitchCase="contentTabBarEnum.TEXT" class="enter-text-content">
+        <div>
+            <quill-editor></quill-editor>
+        </div>
+    </div>
+
+    <div *ngSwitchCase="contentTabBarEnum.HTML" class="enter-html-content">
+        <div>
+            <textarea name="name" rows="8"></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="action-buttons-container">
+    <button
+        type="button" name="button"
+        class="cancel-button"
+        (click)="emitOnCancelPopupOutput()">Cancel</button>
+    <button
+        type="button" name="button"
+        class="upload-button"
+        (click)="emitOnAddOutput()">Add</button>
+</div>

@@ -1,0 +1,304 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "firstName": "Freeda",
+      "lastName": "Runolfsdottir",
+      "email": "Treva67@gmail.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Sabina",
+      "lastName": "Rowe",
+      "email": "Aliyah.Harris@yahoo.com"
+    },
+    {
+      "id": 3,
+      "firstName": "Herman",
+      "lastName": "Stokes",
+      "email": "Darion16@gmail.com"
+    },
+    {
+      "id": 4,
+      "firstName": "Jerald",
+      "lastName": "Gusikowski",
+      "email": "Daron.DAmore@yahoo.com"
+    },
+    {
+      "id": 5,
+      "firstName": "Vickie",
+      "lastName": "Nader",
+      "email": "Marietta.Mraz@gmail.com"
+    },
+    {
+      "id": 6,
+      "firstName": "Allison",
+      "lastName": "Donnelly",
+      "email": "Lexi75@hotmail.com"
+    },
+    {
+      "id": 7,
+      "firstName": "Kavon",
+      "lastName": "Schroeder",
+      "email": "Treva.Macejkovic@gmail.com"
+    },
+    {
+      "id": 8,
+      "firstName": "Blaise",
+      "lastName": "Beier",
+      "email": "Vivien.Schneider@gmail.com"
+    },
+    {
+      "id": 9,
+      "firstName": "Alexandra",
+      "lastName": "Beier",
+      "email": "Henry86@yahoo.com"
+    },
+    {
+      "id": 10,
+      "firstName": "Hobart",
+      "lastName": "Mante",
+      "email": "Coralie_Oberbrunner50@hotmail.com"
+    },
+    {
+      "id": 11,
+      "firstName": "Maud",
+      "lastName": "Jast",
+      "email": "Novella.Nitzsche64@gmail.com"
+    },
+    {
+      "id": 12,
+      "firstName": "Lucinda",
+      "lastName": "Auer",
+      "email": "Norma98@yahoo.com"
+    },
+    {
+      "id": 13,
+      "firstName": "Annalise",
+      "lastName": "Abernathy",
+      "email": "Darwin90@yahoo.com"
+    },
+    {
+      "id": 14,
+      "firstName": "Albina",
+      "lastName": "Rogahn",
+      "email": "Laury_Weber10@yahoo.com"
+    },
+    {
+      "id": 15,
+      "firstName": "Matilde",
+      "lastName": "Ward",
+      "email": "Cade_Corkery63@hotmail.com"
+    },
+    {
+      "id": 16,
+      "firstName": "Aubree",
+      "lastName": "Leannon",
+      "email": "Jack_White@gmail.com"
+    },
+    {
+      "id": 17,
+      "firstName": "Janelle",
+      "lastName": "Wehner",
+      "email": "Daphnee_Watsica43@yahoo.com"
+    },
+    {
+      "id": 18,
+      "firstName": "Yessenia",
+      "lastName": "Johns",
+      "email": "Jackson68@hotmail.com"
+    },
+    {
+      "id": 19,
+      "firstName": "Dax",
+      "lastName": "Nienow",
+      "email": "Oliver_Koepp66@yahoo.com"
+    },
+    {
+      "id": 20,
+      "firstName": "Alfreda",
+      "lastName": "McLaughlin",
+      "email": "Ned_Moore@yahoo.com"
+    },
+    {
+      "id": 21,
+      "firstName": "Dominic",
+      "lastName": "Abshire",
+      "email": "Edwin.Collins79@hotmail.com"
+    },
+    {
+      "id": 22,
+      "firstName": "Emilie",
+      "lastName": "Carroll",
+      "email": "Karolann_Hegmann5@yahoo.com"
+    },
+    {
+      "id": 23,
+      "firstName": "Rosie",
+      "lastName": "Mraz",
+      "email": "Ignacio_Schiller@gmail.com"
+    },
+    {
+      "id": 24,
+      "firstName": "Emile",
+      "lastName": "Shanahan",
+      "email": "Levi_Reinger48@gmail.com"
+    },
+    {
+      "id": 25,
+      "firstName": "Clinton",
+      "lastName": "Homenick",
+      "email": "Garland9@hotmail.com"
+    },
+    {
+      "id": 26,
+      "firstName": "Candace",
+      "lastName": "Hagenes",
+      "email": "Rosemary.Schiller40@hotmail.com"
+    },
+    {
+      "id": 27,
+      "firstName": "Jimmy",
+      "lastName": "Stoltenberg",
+      "email": "Micheal_Windler@gmail.com"
+    },
+    {
+      "id": 28,
+      "firstName": "Noble",
+      "lastName": "Lynch",
+      "email": "Margie89@hotmail.com"
+    },
+    {
+      "id": 29,
+      "firstName": "Bryana",
+      "lastName": "McGlynn",
+      "email": "Ada96@yahoo.com"
+    },
+    {
+      "id": 30,
+      "firstName": "Wilburn",
+      "lastName": "Strosin",
+      "email": "Dulce.Mayert@yahoo.com"
+    },
+    {
+      "id": 31,
+      "firstName": "Dorris",
+      "lastName": "Konopelski",
+      "email": "Nakia_Hand@gmail.com"
+    },
+    {
+      "id": 32,
+      "firstName": "Herbert",
+      "lastName": "Cartwright",
+      "email": "Genesis34@yahoo.com"
+    },
+    {
+      "id": 33,
+      "firstName": "Macey",
+      "lastName": "Pfannerstill",
+      "email": "Eleazar13@gmail.com"
+    },
+    {
+      "id": 34,
+      "firstName": "Trycia",
+      "lastName": "Wunsch",
+      "email": "Nat3@yahoo.com"
+    },
+    {
+      "id": 35,
+      "firstName": "Virginia",
+      "lastName": "Crist",
+      "email": "Rolando_Pagac@gmail.com"
+    },
+    {
+      "id": 36,
+      "firstName": "General",
+      "lastName": "Stroman",
+      "email": "Jazmyne96@hotmail.com"
+    },
+    {
+      "id": 37,
+      "firstName": "Katelyn",
+      "lastName": "Mayer",
+      "email": "Javon_Mueller17@gmail.com"
+    },
+    {
+      "id": 38,
+      "firstName": "Rowland",
+      "lastName": "Durgan",
+      "email": "Ricky28@hotmail.com"
+    },
+    {
+      "id": 39,
+      "firstName": "Ali",
+      "lastName": "Stehr",
+      "email": "Gerard_Strosin33@hotmail.com"
+    },
+    {
+      "id": 40,
+      "firstName": "Sandy",
+      "lastName": "Adams",
+      "email": "Mckenna_Erdman@hotmail.com"
+    },
+    {
+      "id": 41,
+      "firstName": "Tamia",
+      "lastName": "Cronin",
+      "email": "Soledad.Stroman40@hotmail.com"
+    },
+    {
+      "id": 42,
+      "firstName": "Jaquan",
+      "lastName": "Homenick",
+      "email": "Lilly.Walsh@hotmail.com"
+    },
+    {
+      "id": 43,
+      "firstName": "Gudrun",
+      "lastName": "Sporer",
+      "email": "Laura.Moore@yahoo.com"
+    },
+    {
+      "id": 44,
+      "firstName": "Aaliyah",
+      "lastName": "Krajcik",
+      "email": "Andres73@gmail.com"
+    },
+    {
+      "id": 45,
+      "firstName": "Hector",
+      "lastName": "Larkin",
+      "email": "Delta_Parker@gmail.com"
+    },
+    {
+      "id": 46,
+      "firstName": "Halle",
+      "lastName": "Nienow",
+      "email": "Ettie.Adams@gmail.com"
+    },
+    {
+      "id": 47,
+      "firstName": "Jan",
+      "lastName": "Abshire",
+      "email": "Stevie94@yahoo.com"
+    },
+    {
+      "id": 48,
+      "firstName": "Magdalen",
+      "lastName": "Barton",
+      "email": "Maia76@gmail.com"
+    },
+    {
+      "id": 49,
+      "firstName": "Judd",
+      "lastName": "Schumm",
+      "email": "Delfina50@yahoo.com"
+    },
+    {
+      "id": 50,
+      "firstName": "Mellie",
+      "lastName": "Cummerata",
+      "email": "Gaylord38@hotmail.com"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+<!-- Login Content Wrapper -->
+<div id="login_content_wrapper">
+    <!-- Coordinate Logo and Text -->
+    <div id="login_coordinate_container">
+        <div id="login_coordinate_logo">
+            <mat-icon aria-hidden="false" aria-label="Coordinate logo">error_outline</mat-icon>
+            <p>Coordinate Learning</p>
+        </div>
+        <div id="login_coordinate_text">
+            <p>An integrated platform for your education.</p>
+            <p></p>
+        </div>
+    </div>
+
+    <!-- Login Container -->
+    <div id="login_container">
+        <!-- Email -->
+        <div class="credential_container">
+            <input type="text" name="" value="" placeholder="Email" #ang_email>
+        </div>
+
+        <!-- Password -->
+        <div class="credential_container">
+            <input type="password" name="" value="" placeholder="Password" #ang_password>
+        </div>
+
+        <!-- Forgot Password -->
+        <div id="forgot_pass_container">
+            <p>Forgot your password?</p>
+        </div>
+
+        <!-- Login Button -->
+        <button (click)="login(ang_email.value, ang_password.value)" type="button" name="button" #ang_login>Sign in</button>
+    </div>
+</div>
+
+<!-- Introduction -->
+<div id="introduction_wrapper">
+    <p>Use your smartphone, tablet, or computer to sign in and <br> access application features.</p>
+
+    <div class="two_column_grid">
+        <div class="grid_container">
+            <div class="">
+                <!-- <div class="">
+                    <img src="" alt="">
+                </div> -->
+                <mat-icon aria-hidden="false" aria-label="Attendance icon">error_outline</mat-icon>
+            </div>
+            <div class="">
+                <p>Attendance</p>
+                <p>Enable GPS for attendance.</p>
+                <p>Turn on location for your device and click in for roll call! Attendance will be immediately updated on your account for that specific day and course.</p>
+            </div>
+        </div>
+        <div class="grid_container">
+            <div class="">
+                <!-- <div class="">
+                    <img src="" alt="">
+                </div> -->
+                <mat-icon aria-hidden="false" aria-label="Participation icon">error_outline</mat-icon>
+            </div>
+            <div class="">
+                <p>Participation</p>
+                <p>Respond to in-class questions</p>
+                <p>Lecturers can send questions to students who in turn can answer using their device. Polled responses can be graphically displayed and scored!</p>
+            </div>
+        </div>
+        <div class="grid_container">
+            <div class="">
+                <!-- <div class="">
+                    <img src="" alt="">
+                </div> -->
+                <mat-icon aria-hidden="false" aria-label="Lecture slides icon">error_outline</mat-icon>
+            </div>
+            <div class="">
+                <p>Lecture Slides</p>
+                <p>Modify, download, and share lecture notes.</p>
+                <p>Students can take written notes and modify their own copy of the lecturer's slides. Edited slides can be downloaded and even shared to classmates!</p>
+            </div>
+        </div>
+        <div class="grid_container">
+            <div class="">
+                <!-- <div class="">
+                    <img src="" alt="">
+                </div> -->
+                <mat-icon aria-hidden="false" aria-label="Discussion feed icon">error_outline</mat-icon>
+            </div>
+            <div class="">
+                <p>Discussion Feed</p>
+                <p>Post questions and answers on a user-friendly feed.</p>
+                <p>The discussion feed offers an easily-accessible way for students to post any questions they may have and answer posted questions. Enable notifications to get the latest posts!</p>
+            </div>
+        </div>
+        <div class="grid_container">
+            <div class="">
+                <!-- <div class="">
+                    <img src="" alt="">
+                </div> -->
+                <mat-icon aria-hidden="false" aria-label="Collaboration icon">error_outline</mat-icon>
+            </div>
+            <div class="">
+                <p>Collaboration</p>
+                <p>Communicate with your group.</p>
+                <p>Use this feature to easily communicate with group members assigned by the lecturer in a group channel.</p>
+            </div>
+        </div>
+        <div class="grid_container">
+            <div class="">
+                <!-- <div class="">
+                    <img src="" alt="">
+                </div> -->
+                <mat-icon aria-hidden="false" aria-label="Announcements icon">error_outline</mat-icon>
+            </div>
+            <div class="">
+                <p>Announcements</p>
+                <p>Receive announcements from lecturers.</p>
+                <p>Turn on notifications to get important announcements and news from your lecturer.</p>
+            </div>
+        </div>
+        <div class="grid_container">
+            <div class="">
+                <!-- <div class="">
+                    <img src="" alt="">
+                </div> -->
+                <mat-icon aria-hidden="false" aria-label="Grades icon">error_outline</mat-icon>
+            </div>
+            <div class="">
+                <p>Grades</p>
+                <p>Check your grades, points, and test scores.</p>
+                <p>Use this feature to view points for attendance, class participation, test scores, and any other assigned work!</p>
+            </div>
+        </div>
+        <div class="grid_container">
+            <div class="">
+                <!-- <div class="">
+                    <img src="" alt="">
+                </div> -->
+                <mat-icon aria-hidden="false" aria-label="Device-to-screen icon">error_outline</mat-icon>
+            </div>
+            <div class="">
+                <p>Device to Screen</p>
+                <p>Send a snap of your notes</p>
+                <p>This feature allows students to send notes directly to the screen for classmates and lecturers to view!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div id="footer">
+    <p>&copy; 2019 Coordinate Learning. All rights reserved.</p>
+    <ul>
+        <li><a href="#">Terms of use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+    </ul>
+</div>

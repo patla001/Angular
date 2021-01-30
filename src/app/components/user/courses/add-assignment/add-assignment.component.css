@@ -1,0 +1,262 @@
+/*=============================================================================
+                                GENERAL
+=============================================================================*/
+p, li, a {
+    font-size: 0.9rem;
+}
+h3 {
+    color: var(--color_grey);
+}
+mat-form-field, mat-checkbox {
+    font-size: 14px;
+    /* border: 1px dashed blue; */
+}
+/* quill-editor {
+    border: 1px solid red;
+} */
+
+/*=============================================================================
+                                TOOLBAR
+=============================================================================*/
+.toolbar {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+}
+    .toolbar > div {
+        flex: 1;
+        padding: 12px 24px;
+        /* border: 1px dashed; */
+    }
+        .toolbar > div > p {
+            font-weight: bold;
+        }
+    .toolbar_item_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+        .toolbar_item {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-left: 8px;
+            margin-right: 8px;
+            /* padding: 4px 8px; */
+        }
+            .toolbar_item svg {
+                margin-left: 4px;
+                margin-right: 4px;
+            }
+                .toolbar_item svg path {
+                    -webkit-transition-duration: 0.5s;
+                    -moz-transition-duration: 0.5s;
+                    transition-duration: 0.5s;
+                }
+            .toolbar_item p {
+                color: #999;
+                /* margin-left: 4px;
+                margin-right: 4px; */
+                -webkit-transition-duration: 0.5s;
+                -moz-transition-duration: 0.5s;
+                transition-duration: 0.5s;
+            }
+            .toolbar_item:hover {
+                cursor: pointer;
+            }
+            .toolbar_item:hover svg path {
+                fill: var(--color_primary);
+                -webkit-transition-duration: 0.5s;
+                -moz-transition-duration: 0.5s;
+                transition-duration: 0.5s;
+            }
+            .toolbar_item:hover p {
+                color: var(--color_primary);
+                -webkit-transition-duration: 0.5s;
+                -moz-transition-duration: 0.5s;
+                transition-duration: 0.5s;
+            }
+/*---------------------------------------------------------------------------*/
+
+
+/*=============================================================================
+                                CONTENT
+=============================================================================*/
+#content {
+    position: relative;
+    padding: 48px 48px;
+    /* border: 1px dashed pink; */
+}
+    #content_material_container {
+        padding: 16px 24px;
+        margin-bottom: 24px;
+        box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+        #name_points {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            /* border: 1px dashed red; */
+        }
+            #name_points > div {
+                flex: 1;
+            }
+        #category_submission_date {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+            #category_submission_date > div {
+                flex-basis: 30%;
+                /* border: 1px dashed orange; */
+            }
+        #view_definitions {
+            /* border: 1px dashed; */
+            padding: 0px 24px;
+            margin-bottom: 24px;
+        }
+            #view_definitions button {
+                color: #999;
+                background-color: #FFF;
+                font-size: 0.9rem;
+                display: block;
+                text-decoration: none;
+                /* padding: 12px 24px; */
+                padding: 0px;
+                /* border: 1px dashed; */
+                margin-bottom: 12px;
+                -webkit-transition-duration: 0.5s;
+                -moz-transition-duration: 0.5s;
+                transition-duration: 0.5s;
+            }
+            #view_definitions button:hover {
+                color: var(--color_primary);
+                cursor: pointer;
+                /* background-color: var(--color_primary); */
+                -webkit-transition-duration: 0.5s;
+                -moz-transition-duration: 0.5s;
+                transition-duration: 0.5s;
+            }
+            #view_definitions p, #view_definitions li {
+                padding-top: 2px;
+                padding-bottom: 2px;
+            }
+        #graded {
+            margin-bottom: 24px;
+        }
+        #editor {
+
+        }
+            #editor quill-editor {
+                display: block;
+            }
+    #confirm {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-bottom: 24px;
+        /* border: 1px dashed; */
+    }
+    /*---------------------------------------------------------------------------*/
+
+
+    /*=============================================================================
+                                    ACTION BUTTON
+    =============================================================================*/
+    .button_material button {
+        color: var(--color_accent);
+        background-color: #fedf84;
+        display: block;
+        text-decoration: none;
+        padding: 12px 24px;
+        border: none;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+        overflow-x: hidden;
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+    .button_material button:disabled {
+        color: var(--color_grey);
+        background-color: #CECECE;
+    }
+    .button_material button:enabled:hover {
+        cursor: pointer;
+        background-color: var(--color_primary);
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+
+    /*=============================================================================
+                                DATEPICKER/TIMEPICKER
+    =============================================================================*/
+    #datepicker_container, #timepicker_container {
+        background-color: #FFF;
+        width: 100%;
+        position: relative;
+        padding: 1em .75em;
+        margin-bottom: 24px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 5px;
+        -webkit-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+    }
+    #timepicker_container:hover,
+    #datepicker_container:hover {
+        /* cursor: pointer; */
+        /* background-color: #EEE; */
+        border-color: rgba(0, 0, 0, 1);
+        -webkit-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+    }
+        #datepicker_container mat-form-field {
+            display: block;
+            width: 100%;
+        }
+        /* Timepicker input */
+        #timepicker_container > div:nth-of-type(1) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #999;
+        }
+            #timepicker_container > div:nth-of-type(1) > input {
+                display: block;
+                background-color: transparent;
+                font-size: 14px;
+                /* border: 1px dashed purple; */
+            }
+            #timepicker_container > div:nth-of-type(1) > ngx-material-timepicker-toggle {
+                display: block;
+                color: #999;
+                /* border: 1px dashed red; */
+            }
+
+            #timepicker_error {
+                margin-top: 5px;
+            }
+                #timepicker_error p {
+                    color: #f44336;
+                    font-size: 10.5px;
+                }
+            .showError {
+                visibility: visible;
+            }
+            .hideError {
+                visibility: hidden;
+            }

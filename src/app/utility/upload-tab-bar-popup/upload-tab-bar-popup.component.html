@@ -1,0 +1,30 @@
+<div class="coordinate-popup-tab">
+    <p (click)="setCurrentTab(uploadTabBarEnum.CHOOSE_FILE)">Choose File</p>
+    <p (click)="setCurrentTab(uploadTabBarEnum.ENTER_TEXT)">Enter Text</p>
+</div>
+
+<div [ngSwitch]="currentTab" class="coordinate-popup-content">
+    <div *ngSwitchCase="uploadTabBarEnum.CHOOSE_FILE" class="choose-file-content">
+        <p><i>The file to upload must be PDF.</i></p>
+        <div>
+            <input (change)="onFileSelected()" type="file" name="" value="" accept=".pdf" id="pdf-input-file">
+        </div>
+        <div class="choose-file-content-preview">
+            <pdf-viewer [src]="pdfSrc" [render-text]="true" [original-size]="false" [autoresize]="true"></pdf-viewer>
+        </div>
+    </div>
+    <div *ngSwitchCase="uploadTabBarEnum.ENTER_TEXT" class="enter-text-content">
+        <quill-editor></quill-editor>
+    </div>
+</div>
+
+<div class="action-buttons-container">
+    <button
+        type="button" name="button"
+        class="cancel-button"
+        (click)="emitCancelPopupOutput()">Cancel</button>
+    <button
+        type="button" name="button"
+        class="upload-button"
+        (click)="emitUploadOutput()">Upload</button>
+</div>

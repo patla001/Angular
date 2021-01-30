@@ -1,0 +1,53 @@
+/*=============================================================================
+                                CLASSES
+=============================================================================*/
+.inactive-link {
+    color: var(--on-surface-inactive);
+}
+.active-link {
+    color: var(--on-surface);
+}
+
+/*=============================================================================
+                                NAVIGATION BAR
+=============================================================================*/
+nav {
+    background-color: var(--surface);
+    width: 144px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 144px;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+}
+    nav a {
+        display: block;
+        text-decoration: none;
+        /* margin-bottom: 8px; */
+        padding: 8px 16px;
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+    nav > div:hover > a {
+        color: var(--on-surface-hover);
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+    nav > div:active > a {
+        color: var(--on-surface-active);
+        -webkit-transition-duration: 0.2s;
+        -moz-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+    }
+
+/*=============================================================================
+                            ROUTER OUTLET CONTAINER
+=============================================================================*/
+#user_account_container {
+    margin-left: 144px;
+    height: 100%;
+}

@@ -1,0 +1,114 @@
+<!-- TOOLBAR -->
+<mat-toolbar>
+    <span>Assignments</span>
+    <span class="spacer"></span>
+    <div (click)="navigateToAddAssignment()">
+        <mat-icon
+            aria-hidden="false"
+            aria-label="Add">
+                add
+        </mat-icon>
+        <span>Add</span>
+    </div>
+</mat-toolbar>
+
+<div id="content">
+
+    <div *ngIf="gettingAssignments == false else indeterminate_progress_bar">
+        <!-- Toolbar that filters content -->
+        <form [formGroup]="assignmentFormGroup">
+            <div id="content_toolbar">
+                <div id="view_bar">
+                    <label id="view_by_label">View by</label>
+                    <mat-radio-group
+                        formControlName="viewByRadioControl"
+                        aria-labelledby="view_by_label"
+                        id="view_by_radio_group">
+                        <mat-radio-button
+                            class="view_by_radio_button"
+                            [value]="viewByOptionEnum.CATEGORY">
+                            {{viewByOptionEnum.CATEGORY}}
+                        </mat-radio-button>
+                        <mat-radio-button
+                            class="view_by_radio_button"
+                            [value]="viewByOptionEnum.ALL">
+                            {{viewByOptionEnum.ALL}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                    <!-- <div class="">
+                        {{currentViewByOption}}
+                    </div> -->
+                </div>
+
+
+            </div>
+        </form>
+
+        <div id="content_container">
+            <!-- Category Iteration -->
+            <div *ngFor="let category of listOfCategories; let i = index" class="category">
+
+                <div class="category_title">
+                    <h3>{{category}}</h3>
+
+                    <div class="search_bar">
+                        <div>
+                            <mat-form-field appearance="standard">
+                                <mat-label>Search</mat-label>
+                                <input
+                                    matInput
+                                    maxlength="100">
+                                <mat-error
+                                    *ngIf="assignmentFormGroup.get('searchControl').hasError('maxlength')">
+                                    Must not be more than 100 characters
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category_content mat-elevation-z8">
+                    <mat-table [dataSource]="dataSource[i]">
+                        <!-- Title Column -->
+                        <ng-container matColumnDef="title">
+                            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+                        </ng-container>
+
+                        <!-- Due Date Column -->
+                        <ng-container matColumnDef="dueDate">
+                            <mat-header-cell *matHeaderCellDef> Due Date </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.dueDate.toDate() | date: 'medium'}} </mat-cell>
+                        </ng-container>
+
+                        <!-- Points Column -->
+                        <ng-container matColumnDef="points">
+                            <mat-header-cell *matHeaderCellDef> Possible Points </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.points}} </mat-cell>
+                        </ng-container>
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row
+                            *matRowDef="let row; columns: displayedColumns;"
+                            (click)="onRowClicked(row)"
+                            class="assignment_row"></mat-row>
+                    </mat-table>
+
+                    <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- TEMPLATE FOR INDETERMINATE PROGRESS BAR -->
+    <ng-template #indeterminate_progress_bar>
+        <div id="progress_bar_container">
+            <mat-progress-bar
+                mode="indeterminate"
+                color="accent">
+            </mat-progress-bar>
+        </div>
+    </ng-template>
+
+</div>

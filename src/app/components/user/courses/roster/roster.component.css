@@ -1,0 +1,140 @@
+/*=============================================================================
+                                GENERAL
+=============================================================================*/
+p {
+    font-size: 0.7rem;
+}
+.text_title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/*=============================================================================
+                                TOOLBAR
+=============================================================================*/
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+}
+    .toolbar > div {
+        flex: 1;
+        padding: 12px 24px;
+        /* border: 1px dashed; */
+    }
+        .toolbar > div > p {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+    .toolbar_item_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+        .toolbar_item p {
+            padding: 4px 8px;
+        }
+/*---------------------------------------------------------------------------*/
+
+
+/*=============================================================================
+                                CONTENT
+=============================================================================*/
+#content {
+    padding: 48px 48px;
+}
+    .roster_container {
+        padding: 16px 24px;
+        margin-bottom: 24px;
+        box-shadow:
+            0 1px 3px rgba(0, 0, 0, 0.12),
+            0 1px 2px rgba(0, 0, 0, 0.24);
+        /* border: 1px dashed green; */
+    }
+
+        .roster_content {
+            display: flex;
+            flex-direction: column;
+        }
+            .roster_heading {
+                border-bottom: 1px solid #DDD;
+            }
+                .roster_heading > div > p {
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                }
+                .roster_heading > div:nth-of-type(4) > p {
+                    text-align: center;
+                }
+
+            .roster_student:not(:nth-of-type(1)) {
+                border-top: 1px solid #CCC;
+            }
+
+            .roster_heading,
+            .roster_student {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .roster_heading > div,
+            .roster_student > div {
+                padding: 6px 4px;
+            }
+                .roster_heading > div:nth-of-type(1),
+                .roster_student > div:nth-of-type(1) {
+                    flex-basis: 30%;
+                    /* border: 1px dashed; */
+                }
+                .roster_heading > div:nth-of-type(1) > p,
+                .roster_student > div:nth-of-type(1) > p {
+                    /* border: 1px dashed red; */
+                }
+
+                .roster_heading > div:nth-of-type(2),
+                .roster_student > div:nth-of-type(2) {
+                    flex-basis: 30%;
+                    /* border: 1px dashed; */
+                }
+
+                .roster_heading > div:nth-of-type(3),
+                .roster_student > div:nth-of-type(3) {
+                    flex-basis: 15%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    /* border: 1px dashed; */
+                }
+
+                .roster_heading > div:nth-of-type(4),
+                .roster_student > div:nth-of-type(4) {
+                    flex-basis: 25%;
+                    /* border: 1px dashed; */
+                }
+
+    .empty_roster {
+        text-align: center;
+        padding: 12px 24px;
+    }
+        .empty_roster p {
+            color: var(--color_grey);
+        }
+
+    #progress_bar_container {
+        width: 100%;
+        height: 100%;
+        /* position: absolute; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px dashed blue; */
+    }
+        #progress_bar_container app-indeterminate-progress-bar {
+            /* width: 200px; */
+            width: 30%;
+        }

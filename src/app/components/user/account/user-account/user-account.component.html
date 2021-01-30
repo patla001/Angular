@@ -1,0 +1,17 @@
+<!-- Navigation Bar -->
+<nav>
+    <div>
+        <a [routerLink]="['profile']" routerLinkActive="active-link" class="inactive-link">Profile</a>
+    </div>
+    <div>
+        <a [routerLink]="['resume']" routerLinkActive="active-link" class="inactive-link">Resume</a>
+    </div>
+    <div>
+        <a [routerLink]="['settings']" routerLinkActive="active-link" class="inactive-link">Settings</a>        
+    </div>
+</nav>
+
+<!-- Router Outlet Container -->
+<div id="user_account_container">
+    <router-outlet></router-outlet>
+</div>

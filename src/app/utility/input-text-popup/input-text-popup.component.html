@@ -1,0 +1,16 @@
+<div id="input_text_title_container">
+    <p><b>{{inputTextTitle}}</b></p>
+</div>
+
+<div id="input_text_container">
+    <input type="text" name="" value="" #input_text>
+</div>
+
+<div id="input_text_actions_container">
+    <div id="cancel_button_container">
+        <button type="button" name="button" (click)="emitOnCancelPopupOutput()">Cancel</button>
+    </div>
+    <div id="confirm_button_container">
+        <button type="button" name="button" (click)="emitOnInputTextOutput(input_text.value)">Confirm</button>
+    </div>
+</div>

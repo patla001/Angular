@@ -1,0 +1,115 @@
+/*=============================================================================
+                                GENERAL
+=============================================================================*/
+
+
+/*=============================================================================
+                                CONTENT
+=============================================================================*/
+#profile_header{
+    background-color: var(--background-dark);
+}
+    #edit_profile_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 12px;
+    }
+        #edit_profile_container button {
+            align-self: center;
+            display: block;
+            width: 144px;
+            color: var(--color_black);
+            /* background-color: #caecf9; */
+            /* background-color: #444; */
+            border: 0;
+            padding: 12px 32px;
+            -webkit-transition-duration: 0.5s;
+            -moz-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+        }
+        #edit_profile_container button:hover {
+            /* background-color: #50c878; */
+            /* color: var(--color_black); */
+            color: #000;
+            cursor: pointer;
+            -webkit-transition-duration: 0.5s;
+            -moz-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+        }
+
+    .image_cover {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        /* margin: 20px; */
+        object-fit: cover;
+        object-position: center right;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #profile_header h3 {
+        text-align: center;
+        padding: 24px 48px 6px;
+    }
+
+#tagline_container div:nth-of-type(1) p {
+    text-align: center;
+    padding: 24px 48px;
+}
+#tagline_container div:nth-of-type(2) {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+    #tagline_container div:nth-of-type(2) p {
+        text-align: center;
+        padding: 6px 24px 24px;
+    }
+
+#profile_information_container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 24px;
+}
+    .profile_information_row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin-bottom: 12px;
+    }
+        .profile_information_row > div {
+            flex-basis: 40%;
+            padding: 6px 12px;
+            border: 1px dashed pink;
+        }
+#profile_description_container {
+    width: 80%;
+    padding: 12px 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#links_container {
+    width: 80%;
+    padding: 12px 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+    #links_column {
+        margin-left: 48px;
+    }
+        .links {
+            margin-top: 12px;
+            margin-bottom: 12px;
+            padding: 4px;
+        }
+
+#empty_links_container {
+    padding: 12px 24px;
+}

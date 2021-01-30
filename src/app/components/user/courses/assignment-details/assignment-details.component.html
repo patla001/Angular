@@ -1,0 +1,58 @@
+<div class="toolbar">
+    <div class="toolbar_title">
+        <p
+            *ngIf="gettingAssignmentDetails == false">
+            {{assignment.title}}
+        </p>
+    </div>
+    <div class="toolbar_item_container">
+        <div
+            (click)="returnToAssignments()"
+            class="toolbar_item">
+            <p>Return</p>
+        </div>
+    </div>
+</div>
+
+<!-- <mat-app-background> -->
+<div id="content">
+
+    <div *ngIf="gettingAssignmentDetails == false else indeterminate_progress_bar">
+        <!-- Assignment Overview -->
+        <div id="overview">
+            <h3>{{assignment.title}}</h3>
+            <div>
+                <div id="overview_left">
+                    <div>
+                        <p>Due Date: {{assignment.dueDate.toDate() | date: 'medium'}}</p>
+                    </div>
+                    <div>
+                        <p>Status: </p>
+                    </div>
+                </div>
+                <div id="overview_right">
+                    <div>
+                        <p>Points: {{assignment.points}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assignment Details -->
+        <div
+            id="details"
+            [innerHTML]="assignment.details">
+        </div>
+    </div>
+
+    <!-- TEMPLATE FOR INDETERMINATE PROGRESS BAR -->
+    <ng-template #indeterminate_progress_bar>
+        <div id="progress_bar_container">
+            <mat-progress-bar
+                mode="indeterminate"
+                color="accent">
+            </mat-progress-bar>
+        </div>
+    </ng-template>
+</div>
+<!-- </mat-app-background> -->

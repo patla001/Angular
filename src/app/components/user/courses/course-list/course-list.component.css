@@ -1,0 +1,77 @@
+/*=============================================================================
+                                CLASSES
+=============================================================================*/
+.inactive-link {
+    color: var(--on-surface-inactive);
+}
+.active-link {
+    color: var(--on-surface);
+}
+
+/*=============================================================================
+                                NAVIGATION BAR
+=============================================================================*/
+nav {
+    background-color: var(--surface);
+    width: 144px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 144px;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+    z-index: 5;
+}
+    nav > div > a {
+        display: block;
+        text-decoration: none;
+        padding: 8px 16px;
+        /* margin-bottom: 8px; */
+        /* border: 1px dashed black; */
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+    nav > div:hover > a {
+        color: var(--on-surface-hover);
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+    nav > div:active > a {
+        color: var(--on-surface-active);
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+
+#course_name {
+    background-color: var(--surface-darker);
+    padding: 12px 16px;
+}
+    #course_name p {
+        color: var(--on-surface-active);
+        font-size: 1.1rem;
+        text-align: center;
+        font-weight: bold;
+        /* border: 1px dashed red; */
+    }
+    nav > p {
+        /* color: var(--on-primary);
+        background-color: var(--primary-light); */
+        color: var(--on-surface);
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 2px 0px;
+        margin: 48px 16px 0px;
+        border-bottom: 2px solid var(--on-surface);
+    }
+
+/*=============================================================================
+                            ROUTER OUTLET CONTAINER
+=============================================================================*/
+#course_list_container {
+    margin-left: 144px;
+    height: 100%;
+}

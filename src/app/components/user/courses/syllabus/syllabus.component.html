@@ -1,0 +1,72 @@
+<div class="toolbar">
+    <div class="title">
+        <p>Syllabus</p>
+    </div>
+    <div class="toolbar_item_container">
+        <div class="toolbar_item">
+            <button id="upload_button" type="button" name="button" (click)="setPopupVisible(true)">Upload</button>
+        </div>
+        <div class="toolbar_item">
+            <button id="delete_button" type="button" name="button" (click)="setConfirmationPopupVisible(true)">Delete</button>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+
+    <div id="syllabus_container" *ngIf="syllabusDownloadUrl else indeterminate_progress_bar">
+        <pdf-viewer
+            [src]="syllabusDownloadUrl"
+            [render-text]="true"
+            [original-size]="false"
+            [autoresize]="true"></pdf-viewer>
+        <a [href]="syllabusDownloadUrl">resumeDownloadUrl</a>
+        <div class="">
+            <p>{{ uploadPercent$ | async }}</p>
+        </div>
+    </div>
+
+    <!-- TEMPLATE FOR INDETERMINATE PROGRESS BAR -->
+    <ng-template #indeterminate_progress_bar>
+        <div id="progress_bar_container">
+            <app-indeterminate-progress-bar
+                [progressTitle]="getSyllabusTitle">
+            </app-indeterminate-progress-bar>
+        </div>
+    </ng-template>
+
+    <!-- UPLOAD RESUME POPUP CONTAINER -->
+    <div *ngIf="isPopupVisible == true"
+        [ngClass]="{'dim_container': isPopupVisible}"
+        class="popup_container">
+        <app-upload-tab-bar-popup
+            (clickOutside)="setPopupVisible(false)"
+            [delayClickOutsideInit]="true"
+            (onCancelPopupOutput)="setPopupVisible(false)"
+            (onUploadPdfOutput)="onUploadPdfOutput($event)"
+            (onUploadHtmlOutput)="onUploadHtmlOutput($event)">
+        </app-upload-tab-bar-popup>
+    </div>
+
+    <!-- POPUP CONFIRMATION CONTAINER -->
+    <div *ngIf="isConfirmationPopupVisible == true"
+        [ngClass]="{'dim_container': isConfirmationPopupVisible}"
+        class="popup_container">
+        <app-confirmation-popup
+            (clickOutside)="setConfirmationPopupVisible(false)"
+            [delayClickOutsideInit]="true"
+            [confirmationInitData]="confirmationPopupInput"
+            (onConfirmationOutputResult)="onConfirmationOutputResult($event)">
+        </app-confirmation-popup>
+    </div>
+
+    <!-- PROGRESS BAR CONTAINER  -->
+    <div *ngIf="isProgressBarVisible == true"
+        [ngClass]="{'dim_container': isProgressBarVisible}"
+        class="popup_container">
+        <app-progress-bar
+            [progressTitle]="uploadTitle"
+            [progressData]="uploadPercent">
+        </app-progress-bar>
+    </div>
+</div>
